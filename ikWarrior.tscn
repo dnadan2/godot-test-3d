@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Warrior.fbx" type="PackedScene" id=1]
+
+[node name="Warrior" instance=ExtResource( 1 )]
+
+[node name="CharacterArmature" parent="." index="0"]
+transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0 )
+
+[node name="SkeletonIK" type="SkeletonIK" parent="CharacterArmature" index="2"]
+process_priority = 1
+root_bone = "Shoulder.L"
+tip_bone = "LowerArm.L"
+target_node = NodePath("../Spatial/Position3D")
+
+[node name="Spatial" type="Spatial" parent="CharacterArmature" index="3"]
+transform = Transform( 1, -0.000419484, -4.15055e-05, -3.75044e-05, 0.00953339, -0.999955, 0.00041986, 0.999955, 0.00953342, -6.38377e-06, 0.000145079, 0.0152175 )
+
+[node name="Position3D" type="Position3D" parent="CharacterArmature/Spatial" index="0"]
+transform = Transform( 0.00881699, -0.00471812, 0, 0.00471813, 0.00881697, 3.63798e-11, -4.36557e-11, -1.01863e-10, 0.01, 0.0216423, 0.000139318, 0.0109641 )
